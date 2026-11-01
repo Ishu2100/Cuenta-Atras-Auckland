@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Auckland · Cuenta atrás</title>
+<meta name="theme-color" content="#070d1c">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="curtain"></div>
+<div class="stage" id="stage" aria-hidden="true">
+  <div class="sky"></div><div class="stars" id="stars"></div><div class="sun"></div>
+  <div class="photo" id="photo"></div><div class="clouds"></div>
+    <img class="scene" src="assets/skyline.svg" alt="">
+  <div class="veil"></div>
+</div>
+
+<main class="ui">
+  <header class="top"><span class="brand">AKL · 2027</span><button id="fx" class="chip" type="button" aria-pressed="true">Efectos activados</button></header>
+  <section class="hero">
+    <p class="eyebrow r" id="eyebrow" style="--i:1">Tu próximo destino</p>
+    <h1 class="r" style="--i:2">AUCKLAND</h1>
+    <p class="sub r" style="--i:3">NEW ZEALAND</p>
+    <p class="quote r" id="quote" style="--i:4">Your next adventure is closer than ever.</p>
+  </section>
+  <p class="badge" id="last24" hidden>¡Últimas 24 horas!</p>
+  <section class="clock r" style="--i:5" id="clock" role="timer" aria-label="Tiempo restante hasta la salida del vuelo">
+    <div class="unit"><span class="num" id="d">--</span><span class="lab">Días</span></div>
+    <div class="unit"><span class="num" id="h">--</span><span class="lab">Horas</span></div>
+    <div class="unit"><span class="num" id="m">--</span><span class="lab">Minutos</span></div>
+    <div class="unit"><span class="num" id="s">--</span><span class="lab">Segundos</span></div>
+  </section>
+  <section class="arrived" id="arrived" hidden>
+    <h2>¡HOY COMIENZA<br>LA AVENTURA!</h2><p>Auckland te espera. Ha llegado el momento de hacer las maletas y despegar.</p>
+  </section>
+  <section class="journey r" style="--i:6" id="journey">
+    <div class="track" id="bar" role="progressbar" aria-label="Progreso de la espera hasta la salida del vuelo" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <div class="jclouds"></div><div class="line"></div><div class="fill"></div>
+      <div class="pt a"></div><div class="pt b"></div>
+      <div class="fly"><div class="puffs"><i style="--n:0"></i><i style="--n:1"></i><i style="--n:2"></i><i style="--n:3"></i><i style="--n:4"></i></div>
+        <svg class="plane" viewBox="0 0 100 100" aria-hidden="true"><g fill="#eef2f8"><path d="M99 50Q96 46.8 88 46.4L22 47 14 50 22 53 88 53.6Q96 53.2 99 50Z"/><path d="M62 47 40 12H33L44 47ZM62 53 40 88H33L44 53Z" fill="#c9d3e3"/><path d="M22 47 9 34H5L13 47ZM22 53 9 66H5L13 53Z" fill="#c9d3e3"/><ellipse cx="49" cy="29" rx="5" ry="1.9" fill="#9aa7bd"/><ellipse cx="49" cy="71" rx="5" ry="1.9" fill="#9aa7bd"/><circle class="blink" cx="35" cy="12" r="1.8" fill="#ff4d5e"/><circle class="blink" cx="35" cy="88" r="1.8" fill="#4dff9a"/><circle class="blink" cx="8" cy="50" r="1.4" fill="#fff"/></g></svg></div>
+    </div>
+    <div class="ends"><span><b>Punto de partida</b><small id="startDate"></small></span><span><b>Auckland</b><small>Nueva Zelanda</small></span></div>
+    <p class="pctline" id="pctLine"></p>
+    <p class="times">Transcurrido: <b id="elapsed">—</b> · Quedan: <b id="remaining">—</b></p>
+  </section>
+  <section class="cards r" style="--i:7">
+    <article class="card"><div>
+      <p class="k">Fecha de salida</p><p class="big" id="depDate">—</p>
+      <p class="sm"><b id="depTime"></b> hora de <span id="depLabel"></span><br>En Auckland serán las <span id="depNz"></span></p></div></article>
+    <article class="card">
+      <svg class="map" viewBox="0 0 90 135" aria-hidden="true"><path d="M38 4 46 18 58 28 72 30 68 46 62 58 50 74 44 66 40 52 32 50 38 40 34 28 40 16Z" fill="rgba(127,214,200,.25)" stroke="#7fd6c8" stroke-width="1"/><path d="M44 80 56 82 50 96 36 116 24 126 14 122 28 104 34 90Z" fill="rgba(127,214,200,.15)" stroke="#7fd6c8" stroke-width="1"/><circle cx="47" cy="22" r="2.6" fill="#f3c48a"/><circle class="ping" cx="47" cy="22" r="4" fill="none" stroke="#f3c48a"/></svg>
+      <div><p class="k">Destino</p><p class="big">Auckland, Nueva Zelanda</p>
+      <p class="sm">Ahora allí son las <b id="nzNow">--:--</b><br><span id="nzDiff"></span></p></div></article>
+  </section>
+</main>
+<script src="js/config.js"></script>
+<script src="js/countdown.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
